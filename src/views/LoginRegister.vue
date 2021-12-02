@@ -13,12 +13,12 @@
           <v-tabs-slider></v-tabs-slider>
 
           <v-tab href="#tab-1">
-            ورود
+            login
             <v-icon>mdi-login</v-icon>
           </v-tab>
 
           <v-tab href="#tab-2">
-            ثبت نام
+            register
             <v-icon>mdi-account-plus-outline</v-icon>
           </v-tab>
         </v-tabs>
@@ -28,7 +28,7 @@
             <v-card flat>
               <v-card-text>
                 <div v-if="i == 1"><login /></div>
-                <div v-if="i != 1"><register /><login /></div>
+                <div v-if="i == 2"><register /></div>
               </v-card-text>
             </v-card>
           </v-tab-item>
@@ -48,11 +48,7 @@ export default {
   data() {
     return {
       tab: null,
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     };
   },
 };
 </script>
-
-<style>
-</style>
