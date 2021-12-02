@@ -133,7 +133,7 @@ export default {
         .post("https://odev.abrnoc.com/fastapi/auth", this.form)
         .then(() => {
           sessionStorage.setItem("email", this.form.email);
-          this.$router.push("emailVerify");
+          this.$router.push("/email-verify");
         })
         .catch(() => {
           this.hasError = true;
