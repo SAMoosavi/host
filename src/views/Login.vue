@@ -7,7 +7,7 @@
           <v-text-field
             v-model="form.email"
             label="E-mail"
-            :rules="[rules.required]"
+            :rules="[rules.required,rules.email]"
             required
           ></v-text-field>
         </v-col>
@@ -22,12 +22,16 @@
             @click:append="show1 = !show1"
           ></v-text-field>
         </v-col>
-        <v-col cols="12" class="d-flex align-center" >
+        <v-col cols="12" class="d-flex align-center">
           <v-btn class="mx-4 d-block" :disabled="!valid" type="submit">
             submit
           </v-btn>
-          
-          <router-link to="/forgot-password" class="text-decoration-underline grey--text">forgot your password!</router-link>
+
+          <router-link
+            to="/forgot-password"
+            class="text-decoration-underline grey--text"
+            >forgot your password!</router-link
+          >
         </v-col>
       </v-row>
     </v-container>
@@ -49,14 +53,24 @@ export default {
         email: "",
       },
       valid: false,
-
+      okEmail: "",
       rules: {
         required: (value) => !!value || "Required.",
+        email: () => this.okEmail || "E-mail must be valid",
       },
 
       hasError: false,
       error: "",
     };
+  },
+  watch: {
+    "form.email": function (v) {
+      if (!/.+@.+/.test(v) || !/.+\..+/.test(v)) {
+        this.okEmail = false;
+      } else {
+        this.okEmail = true;
+      }
+    },
   },
 
   methods: {
@@ -64,7 +78,7 @@ export default {
       axios
         .post("https://odev.abrnoc.com/fastapi/auth/login", this.form)
         .then((respons) => {
-          localStorage.setItem("token",respons.data.token);
+          localStorage.setItem("token", respons.data.token);
           this.$router.push("/");
         })
         .catch((respons) => {
