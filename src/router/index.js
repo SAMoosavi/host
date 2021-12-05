@@ -5,8 +5,10 @@ import Home from "../views/Home.vue";
 import LoginRegister from "../views/LoginRegister.vue";
 import ForgotPassword from "../views/ForgotPassword.vue";
 
+
 Vue.use(VueRouter);
 
+//rout
 const routes = [
   {
     path: "/",
@@ -15,7 +17,7 @@ const routes = [
   },
   {
     path: "/login-register",
-    name: "login",
+    name: "loginRegister",
     component: LoginRegister,
   },
   {
@@ -35,5 +37,15 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 });
+
+//middleware
+router.beforeEach((to,from,next)=>{
+  if (to.name == "Home") {
+    if (!localStorage.token) {
+     return next({name:"loginRegister"})
+    }
+  } 
+  return next();
+})
 
 export default router;
