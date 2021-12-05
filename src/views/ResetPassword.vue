@@ -5,11 +5,18 @@
         <v-card elevation="8" tile>
           <v-form v-model="valid" @submit.prevent="submit">
             <v-container>
+              <v-card-title class="deep-purple accent-4 white--text">
+                Reset your password
+              </v-card-title>
               <v-row class="px-4 pt-4">
                 <p v-if="hasError" class="red--text text--darken-4">
                   {{ error }}
-                  <br/>
-                  <router-link to="/forgot-password" class="text-decoration-underline grey--text">forgot password page!</router-link>
+                  <br />
+                  <router-link
+                    to="/forgot-password"
+                    class="text-decoration-underline grey--text"
+                    >forgot password page!</router-link
+                  >
                 </p>
                 <v-col cols="12" md="6">
                   <v-text-field
@@ -102,7 +109,8 @@ export default {
           this.hasError = true;
           this.form.new_password = "";
           this.form.ConfirmPassword = "";
-          this.error = "We can not change the password. Please return to the Forgot Password page";
+          this.error =
+            "We can not change the password. Please return to the Forgot Password page";
         });
     },
   },
