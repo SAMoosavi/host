@@ -23,7 +23,7 @@
                   <v-text-field
                     v-model="form.email"
                     label="E-mail"
-                    :rules="[rules.required]"
+                    :rules="[rules.required,rules.email]"
                     required
                   ></v-text-field>
                 </v-col>
@@ -55,16 +55,27 @@ export default {
       form: {
         email: "",
       },
+      okEmail: "",
       valid: false,
 
       rules: {
         required: (value) => !!value || "Required.",
+        email: () => this.okEmail || "E-mail must be valid",
       },
       hasError: false,
       error: "",
       hasSucsses: false,
       sucsses: "",
     };
+  },
+  watch: {
+    "form.email": function (v) {
+      if (!/.+@.+/.test(v) || !/.+\..+/.test(v)) {
+        this.okEmail = false;
+      } else {
+        this.okEmail = true;
+      }
+    },
   },
   methods: {
     submit() {
