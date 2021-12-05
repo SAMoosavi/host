@@ -4,7 +4,7 @@ import EmailVerify from "../views/EmailVerify.vue";
 import Home from "../views/Home.vue";
 import LoginRegister from "../views/LoginRegister.vue";
 import ForgotPassword from "../views/ForgotPassword.vue";
-
+import ResetPassword from "../views/ResetPassword.vue"
 
 Vue.use(VueRouter);
 
@@ -29,6 +29,11 @@ const routes = [
     path: "/forgot-password",
     name: "forgotPassword",
     component: ForgotPassword,
+  },
+  {
+    path:"/reset-password",
+    name:"resetPassword",
+    component: ResetPassword,
   },
 ];
 
