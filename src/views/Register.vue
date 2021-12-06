@@ -3,7 +3,7 @@
     <v-container>
       <p v-if="hasError" class="red--text text--darken-4">{{ error }}</p>
       <v-row>
-        <v-col cols="12" md="4">
+        <v-col cols="12" md="6" lg="4">
           <v-text-field
             v-model="form.firstname"
             :rules="[rules.required]"
@@ -12,7 +12,7 @@
           ></v-text-field>
         </v-col>
 
-        <v-col cols="12" md="4">
+        <v-col cols="12" md="6" lg="4">
           <v-text-field
             v-model="form.lastname"
             :rules="[rules.required]"
@@ -21,7 +21,7 @@
           ></v-text-field>
         </v-col>
 
-        <v-col cols="12" md="4">
+        <v-col cols="12" md="6" lg="4">
           <v-text-field
             v-model="form.email"
             :rules="[rules.required, rules.email]"
@@ -29,7 +29,7 @@
             required
           ></v-text-field>
         </v-col>
-        <v-col cols="12" md="4">
+        <v-col cols="12" md="6" lg="4">
           <v-text-field
             v-model="form.phone_number"
             :rules="[rules.required, rules.phone]"
@@ -38,7 +38,7 @@
             required
           ></v-text-field>
         </v-col>
-        <v-col cols="12" md="4">
+        <v-col cols="12" md="6" lg="4">
           <v-text-field
             v-model="form.password"
             :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
@@ -51,7 +51,7 @@
             @click:append="show1 = !show1"
           ></v-text-field>
         </v-col>
-        <v-col cols="12" md="4">
+        <v-col cols="12" md="6" lg="4">
           <v-text-field
             v-model="form.ConfirmPassword"
             :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"

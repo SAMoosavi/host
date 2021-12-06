@@ -1,7 +1,7 @@
 <template>
-  <v-container>
+  <v-app>
     <v-row justify="center" align="center">
-      <v-col cols="12" md="6">
+      <v-col cols="12" md="5" lg="3">
         <v-card elevation="8" tile>
           <v-form v-model="valid" @submit.prevent="submit">
             <v-container>
@@ -60,7 +60,7 @@
         </v-card>
       </v-col>
     </v-row>
-  </v-container>
+  </v-app>
 </template>
 
 <script>

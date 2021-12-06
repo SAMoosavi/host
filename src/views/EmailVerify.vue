@@ -1,7 +1,7 @@
 <template>
-  <v-container>
-    <v-row justify="center" align="center">
-      <v-col cols="12" md="6">
+  <v-app>
+    <v-row justify="center" align="center" class="grey lighten-2">
+      <v-col cols="12" md="5" lg="3">
         <v-card elevation="8" tile>
           <v-card-title class="deep-purple accent-4 white--text"
             >Verify Your Email Address</v-card-title
@@ -25,7 +25,7 @@
         </v-card>
       </v-col>
     </v-row>
-  </v-container>
+  </v-app>
 </template>
 
 <script>

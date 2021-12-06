@@ -1,7 +1,7 @@
 <template>
-  <v-container>
-    <v-row justify="center" align="center">
-      <v-col cols="12" md="6">
+  <v-app>
+    <v-row justify="center" align="center" class="grey lighten-2">
+      <v-col cols="12" md="5" lg="3">
         <v-card elevation="8" tile>
           <v-card-title class="deep-purple accent-4 white--text">
             forgot your password
@@ -19,7 +19,7 @@
                 <p v-if="hasSucsses" class="green--text text--darken-4">
                   {{ sucsses }}
                 </p>
-                <v-col cols="12" md="6">
+                <v-col cols="12">
                   <v-text-field
                     v-model="form.email"
                     label="E-mail"
@@ -44,7 +44,7 @@
         </v-card>
       </v-col>
     </v-row>
-  </v-container>
+  </v-app>
 </template>
 
 <script>
