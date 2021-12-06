@@ -4,7 +4,7 @@ import EmailVerify from "../views/EmailVerify.vue";
 import Home from "../views/Home.vue";
 import LoginRegister from "../views/LoginRegister.vue";
 import ForgotPassword from "../views/ForgotPassword.vue";
-import ResetPassword from "../views/ResetPassword.vue"
+import ResetPassword from "../views/ResetPassword.vue";
 
 Vue.use(VueRouter);
 
@@ -31,8 +31,8 @@ const routes = [
     component: ForgotPassword,
   },
   {
-    path:"/reset-password",
-    name:"resetPassword",
+    path: "/reset-password",
+    name: "resetPassword",
     component: ResetPassword,
   },
 ];
@@ -44,13 +44,18 @@ const router = new VueRouter({
 });
 
 //middleware
-router.beforeEach((to,from,next)=>{
+router.beforeEach((to, from, next) => {
   if (to.name == "Home") {
     if (!localStorage.token) {
-     return next({name:"loginRegister"})
+      return next({ name: "loginRegister" });
     }
-  } 
+  }
+  if (to.name != "Home") {
+    if (localStorage.token) {
+      return next({ name: "Home" });
+    }
+  }
   return next();
-})
+});
 
 export default router;
