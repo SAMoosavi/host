@@ -1,0 +1,11 @@
+.bg-white-to-black {
+  background-color: #ffffff;
+  background-image: linear-gradient(225deg, #ffffff 0%, #000000 100%);
+}
+.bg-white-to-gray {
+  background-color: #ffffff;
+  background-image: linear-gradient(168deg, #ffffff 14%, #6f6f6f 88%);
+}
+.bg-image-auth{
+  background: url(../images/background/auth.png) center center/cover;
+}

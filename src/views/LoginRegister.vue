@@ -1,15 +1,16 @@
 
     <template>
-  <v-app>
-    <v-row justify="center" align="center" class="grey lighten-2">
-      <v-col cols="12" md="8" lg="6">
+  <v-app class="p-0 m-0">
+    <v-row justify="center" align="center" class="p-0 m-0 bg-image-auth">
+      <v-col cols="12" md="5" lg="3">
         <v-card>
           <v-tabs
             v-model="tab"
-            background-color="deep-purple accent-4"
+            background-color="indigo darken-3"
             centered
             dark
             icons-and-text
+            class="text-uppercase"
           >
             <v-tabs-slider></v-tabs-slider>
 
@@ -26,7 +27,7 @@
 
           <v-tabs-items v-model="tab">
             <v-tab-item v-for="i in 2" :key="i" :value="'tab-' + i">
-              <v-card flat>
+              <v-card >
                 <v-card-text>
                   <div v-if="i == 1"><login /></div>
                   <div v-if="i == 2"><register /></div>
