@@ -1,7 +1,7 @@
 
     <template>
-  <v-app class="p-0 m-0">
-    <v-row justify="center" align="center" class="p-0 m-0 bg-image-auth">
+  <v-app class="pa-0 ma-0">
+    <v-row justify="center" align="center" class="pa-0 ma-0 bg-image-auth">
       <v-col cols="12" md="5" lg="3">
         <v-card>
           <v-tabs
