@@ -57,4 +57,7 @@ export default {
 </script>
 
 <style>
+.bg-image-auth{
+  background: url(../assets/images/background/auth.png) center center/cover;
+}
 </style>

@@ -83,7 +83,7 @@ export default {
         })
         .catch((respons) => {
           this.hasError = true;
-          this.error = respons.data.message;
+          this.error = respons.message;
         });
     },
   },
