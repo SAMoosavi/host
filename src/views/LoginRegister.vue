@@ -1,6 +1,7 @@
 
     <template>
   <v-app class="pa-0 ma-0">
+    <v-main dark class="grey darken-4">
     <v-row justify="center" align="center" class="pa-0 ma-0 bg-image-auth">
       <v-col cols="12" md="5" lg="3">
         <v-card>
@@ -38,6 +39,7 @@
         </v-card>
       </v-col>
     </v-row>
+    </v-main>
   </v-app>
 </template>
     

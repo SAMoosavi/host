@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <v-main dark class="grey darken-4">
     <v-row justify="center" align="center" class="bg-image-auth">
       <v-col cols="12" md="5" lg="3">
         <v-card elevation="8" tile>
@@ -22,6 +23,7 @@
         </v-card>
       </v-col>
     </v-row>
+    </v-main>
   </v-app>
 </template>
 
