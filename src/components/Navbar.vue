@@ -10,27 +10,20 @@
       <v-divider></v-divider>
 
       <v-list dense>
-        <v-list-item
-          v-for="item in items"
-          :key="item.title"
-          link
-          @click="sendTo(item.name)"
-        >
+        <v-list-item link @click="logout">
           <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon>mdi-log-out</v-icon>
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>
-              {{ item.title }}
-            </v-list-item-title>
+            <v-list-item-title> Log out </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
     <div>
-      <v-app-bar color="deep-purple accent-4" dense dark>
+      <v-app-bar color="indigo darken-3" dense dark>
         <v-app-bar-nav-icon
           class="d-md-none"
           @click="drawer = !drawer"
@@ -41,16 +34,8 @@
         >
 
         <v-spacer></v-spacer>
-        <div class="d-md-flex d-none flex-row-reverse ">
-          <div
-            v-for="item in items"
-            :key="item.title"
-            @click="sendTo(item.name)"
-          >
-            <v-btn plain text>
-              {{ item.title }}
-            </v-btn>
-          </div>
+        <div class="d-md-flex d-none flex-row-reverse">
+          <v-btn plain text @click="logout"> Log out </v-btn>
         </div>
       </v-app-bar>
     </div>
@@ -58,23 +43,31 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   data: () => {
     return {
       drawer: false,
-      items: [
-        { title: "Home", icon: "mdi-view-dashboard", name: "Home" },
-        // { title: "other", icon: "mdi-forum", name: "" },
-      ],
     };
   },
   methods: {
-    sendTo(url) {
-      if(url != "Home") this.$router.push({ name: url });
+    logout() {
+      axios
+        .post("https://odev.abrnoc.com/fastapi/auth/logout", {
+          headers: {
+            "X-Token": localStorage.token,
+          },
+        })
+        .then(() => {
+          localStorage.setItem("token", null);
+          this.$router.push("/login-register");
+        })
+        .catch(function (respons) {
+          console.log(respons);
+        });
     },
   },
 };
 </script>
 
-<style>
-</style>
+<style></style>
