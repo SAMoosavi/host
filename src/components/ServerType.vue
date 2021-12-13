@@ -61,7 +61,7 @@
 <script>
 export default {
   props: {
-    templates: Object,
+    templates: Array,
     show: Object,
   },
   data() {

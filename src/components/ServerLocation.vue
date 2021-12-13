@@ -216,7 +216,7 @@
 
 <script>
 export default {
-  props: { locations: Object },
+  props: { locations: Array },
   data() {
     return {
       tab: null,
