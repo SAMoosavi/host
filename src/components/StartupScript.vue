@@ -157,14 +157,8 @@ export default {
       /*   Send Form  */
       //   axios
       //     .post("url")
-      //     .then((Response) => {
-      //       console.log(Response);
-      //     })
-      //     .catch((Response) => {
-      //       console.log(Response);
-      //     });
-      
-      /*   Get Startup Script  */
+      //     .then(() => {
+      ///*   Get Startup Script  */
       //   axios
       //   .get("URL", {
       //     headers: {
@@ -177,6 +171,10 @@ export default {
       //   .catch(function (respons) {
       //     console.log(respons);
       //   });
+      //     })
+      //     .catch((Response) => {
+      //       console.log(Response);
+      //     });
     },
   },
 
