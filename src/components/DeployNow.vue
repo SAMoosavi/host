@@ -3,30 +3,36 @@
     <v-row justify="start" align="center">
       <v-col cols="12" md="3">
         <v-row justify="start" align="start">
-          <v-col cols="6">
+          <v-col>
             <v-list color="transparent">
-              <v-list-item class="pa-0"><p class="s1 ma-0">Servers Qty</p></v-list-item>
+              <v-list-item class="pa-0"
+                ><p class="s1 ma-0">Servers Qty</p></v-list-item
+              >
               <v-list-item class="pa-0">
-                  <v-btn-toggle>
-                    <v-btn small v-if="j > 1" @click="minus"> - </v-btn>
-                    <v-btn small v-else disabled> - </v-btn>
-                    <v-btn small disabled>
-                      {{ j }}
-                    </v-btn>
-                    <v-btn small @click="sum"> + </v-btn>
-                  </v-btn-toggle>
+                <v-btn-toggle>
+                  <v-btn small v-if="j > 1" @click="minus"> - </v-btn>
+                  <v-btn small v-else disabled> - </v-btn>
+                  <v-btn small disabled>
+                    {{ j }}
+                  </v-btn>
+                  <v-btn small @click="sum"> + </v-btn>
+                </v-btn-toggle>
               </v-list-item>
             </v-list>
           </v-col>
-          <v-col cols="6" class="px-0">
+          <v-col class="px-0">
             <v-list color="transparent">
-              <v-list-item class="pa-0"><p class="s1 ma-0">Summary</p></v-list-item>
+              <v-list-item class="pa-0"
+                ><p class="s1 ma-0">Summary</p></v-list-item
+              >
               <v-list-item class="pa-0" dark>
                 <p class="indigo--text text-lighten-4 s3">
-                  ${{ summaryMonth }}
-                  <span class="s2">/month</span>
+                  ${{ parseFloat(summaryMonth).toFixed(2)
+                  }}<span class="s2">/month </span>
                 </p>
-                <p class="s1">(${{ summaryHour }}/hour)</p>
+                <p class="s1">
+                  (${{ parseFloat(summaryHour).toFixed(5) }}/hour)
+                </p>
               </v-list-item>
             </v-list>
           </v-col>
@@ -65,9 +71,9 @@ export default {
     j: function (v) {
       this.$emit("j", v);
     },
-    ok:function(v){
+    ok: function (v) {
       console.log(v);
-    }
+    },
   },
 };
 </script>
