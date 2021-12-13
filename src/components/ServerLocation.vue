@@ -32,7 +32,7 @@
               <v-list-item
                 :class="`location${key}`"
                 two-line
-                @click="getThisLocation(location.ID, key)"
+                @click="getThisLocation(location.id, key)"
               >
                 <v-list-item-content>
                   <v-list-item-title class="text-h4 mb-1">
@@ -71,7 +71,7 @@
               <v-list-item
                 :class="`location${key}`"
                 two-line
-                @click="getThisLocation(location.ID, key)"
+                @click="getThisLocation(location.id, key)"
               >
                 <v-list-item-content>
                   <v-list-item-title class="text-h4 mb-1">
@@ -110,7 +110,7 @@
               <v-list-item
                 :class="`location${key}`"
                 two-line
-                @click="getThisLocation(location.ID, key)"
+                @click="getThisLocation(location.id, key)"
               >
                 <v-list-item-content>
                   <v-list-item-title class="text-h4 mb-1">
@@ -149,7 +149,7 @@
               <v-list-item
                 :class="`location${key}`"
                 two-line
-                @click="getThisLocation(location.ID, key)"
+                @click="getThisLocation(location.id, key)"
               >
                 <v-list-item-content>
                   <v-list-item-title class="text-h4 mb-1">
@@ -188,7 +188,7 @@
               <v-list-item
                 :class="`location${key}`"
                 two-line
-                @click="getThisLocation(location.ID, key)"
+                @click="getThisLocation(location.id, key)"
               >
                 <v-list-item-content>
                   <v-list-item-title class="text-h4 mb-1">
