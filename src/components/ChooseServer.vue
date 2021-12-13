@@ -20,7 +20,6 @@
               <v-list-item>
                 <v-list-item-content
                   tile
-                  size="80"
                   class="d-flex justify-center"
                 >
                   <v-img
