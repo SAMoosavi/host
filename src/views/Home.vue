@@ -27,7 +27,12 @@
         <v-divider dark class="my-2"></v-divider>
 
         <!-- Server Size -->
-        <server-size :sizes="sizes" @size-id="getThisSize" />
+        <server-size
+          :sizes="sizes"
+          @size-id="getThisSize"
+          @month="priceMonth"
+          @hour="priceHour"
+        />
         <v-divider dark class="my-2"></v-divider>
 
         <!-- Additional Features -->
@@ -183,6 +188,9 @@ export default {
       j: 1,
 
       //Deploy Now
+      month: 0,
+      hour: 0,
+      priceFeatures: 0,
       summaryMonth: null,
       summaryHour: null,
       ok: false,
@@ -298,8 +306,31 @@ export default {
       }
     },
 
+    priceMonth(month) {
+      this.summaryMonth -= this.month * this.j;
+      this.summaryMonth += month * this.j;
+      this.month = month;
+    },
+
+    priceHour(hour) {
+      this.summaryHour -= this.hour * this.j;
+      this.summaryHour += hour * this.j;
+      this.hour = hour;
+    },
+
     getThisAdditionalFeatures(additionalFeatures) {
       this.form.additionalFeatures = additionalFeatures;
+      this.summaryMonth -= this.priceFeatures * this.j;
+      this.summaryHour -= (this.priceFeatures / 720) * this.j;
+      this.priceFeatures = 0;
+      for (let i = 0; i < this.features.length; i++) {
+        const element = this.features[i];
+        if (additionalFeatures.find((e) => e == i)) {
+          this.priceFeatures += element.price;
+        }
+      }
+      this.summaryMonth += this.priceFeatures * this.j;
+      this.summaryHour += (this.priceFeatures / 720) * this.j;
     },
 
     getThisStartupScript(startupScriptId) {
@@ -330,6 +361,8 @@ export default {
     },
 
     number(j) {
+      this.summaryMonth *= j / this.j;
+      this.summaryHour *= j / this.j;
       this.j = j;
     },
 
