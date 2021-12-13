@@ -57,8 +57,8 @@
         <v-row v-else-if="continent.id == 1" justify="start" class="my-2">
           <v-col
             cols="6"
-            md="3"
-            lg="2"
+            md="4"
+            lg="3"
             v-for="(location, key) in continents1"
             :key="key"
             class="pa-0"
@@ -96,8 +96,8 @@
         <v-row v-else-if="continent.id == 2" justify="start" class="my-2">
           <v-col
             cols="6"
-            md="3"
-            lg="2"
+            md="4"
+            lg="3"
             v-for="(location, key) in continents2"
             :key="key"
             class="pa-0"
@@ -135,8 +135,8 @@
         <v-row v-else-if="continent.id == 3" justify="start" class="my-2">
           <v-col
             cols="6"
-            md="3"
-            lg="2"
+            md="4"
+            lg="3"
             v-for="(location, key) in continents3"
             :key="key"
             class="pa-0"
@@ -174,8 +174,8 @@
         <v-row v-else justify="start" class="my-2">
           <v-col
             cols="6"
-            md="3"
-            lg="2"
+            md="4"
+            lg="3"
             v-for="(location, key) in continents4"
             :key="key"
             class="pa-0"
