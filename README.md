@@ -1,5 +1,7 @@
 # host
 
+# This is my first project with vue CLI and vueRouter and vuetify
+
 ## Project setup
 ```
 npm install
