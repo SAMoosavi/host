@@ -152,8 +152,6 @@ export default {
       }
     },
 
-    openAlert() {},
-
     submit() {
       this.dialog = false;
       /*   Send Form  */
