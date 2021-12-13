@@ -14,18 +14,14 @@
           <v-list-item
             :id="`size${key}`"
             two-line
-            @click="getThisSize(size.ID, key)"
+            @click="getThisSize(size.ID, size.month, size.hour, key)"
           >
             <v-list-item-content class="text-center">
-              <v-list-item-action-text >
-              </v-list-item-action-text>
+              <v-list-item-action-text> </v-list-item-action-text>
               <v-list-item-action-text class="text-h5">
                 {{ size.NVMe }} GB NVMe
               </v-list-item-action-text>
-                  <v-list-item-title>
-                ${{ size.month }}/month
-
-                  </v-list-item-title>
+              <v-list-item-title> ${{ size.month }}/month </v-list-item-title>
               <v-list-item-action-text class="text-Caption">
                 ${{ size.hour }}/hour
               </v-list-item-action-text>
@@ -61,7 +57,7 @@ export default {
     };
   },
   methods: {
-    getThisSize(id, key) {
+    getThisSize(id, month, hour, key) {
       if (this.activSize != -1) {
         document
           .getElementById("size" + this.activSize)
@@ -70,6 +66,8 @@ export default {
       document.getElementById("size" + key).classList.add("border-activ");
       this.activSize = key;
       this.$emit("size-id", id);
+      this.$emit("month", month);
+      this.$emit("hour", hour);
     },
   },
 };
